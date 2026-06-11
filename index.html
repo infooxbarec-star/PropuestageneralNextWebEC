@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   const initialHash = window.location.hash;
   function setStatus(msg) { if (loading) loading.textContent = msg; }
 
-  if (initialHash === '#mockups') {
+  if (initialHash) {
     history.replaceState(null, '', window.location.pathname + window.location.search);
   }
 
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       window.Babel.transformScriptTags();
     }
 
-    if (initialHash === '#mockups') {
+    if (initialHash) {
       requestAnimationFrame(function() {
         window.scrollTo(0, 0);
       });
